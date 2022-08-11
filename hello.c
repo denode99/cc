@@ -3,14 +3,17 @@
 #include <stdio.h>  // contains the declarations for C Standard I/O functions.
 #include <stdlib.h>  // contains the declarations for general utility functions.
 
-int main(void) {
-    // printf("Julio Castillo\n");
-    // return 0;
+int main(void) {  // compound statement
 
-    // puts("Julio");  // con salto de linea
-    printf("%s\n", "Hello World!!!");
+    // declares two integer objects with initial values.
+    int a = 1;  // a -> identifier
+    int b = 2;
 
-    return EXIT_SUCCESS;  // macro
+    printf("%s\n", "Hello World!!!");  // puts("Julio");  // con salto de linea
+    printf("main: a = %d, b = %d", a, b);
+
+    // return EXIT_SUCCESS;  // macro
+    return 0;
 }
 
 // int main(void) {

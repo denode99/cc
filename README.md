@@ -1,9 +1,9 @@
 # C
 
 ## Compiler
-`gcc -std=c17 -Wall -Wextra -pedantic <file.c>`
+- `gcc -Wall -Wextra -g -Wextra -Wa, -a=hello.lst -c hello.c`
+- `gcc -std=c17 -Wall -Wextra -pedantic <file.c>`
 - `gcc -S hello.c`
-
 
 ### Preprocessor
 El primer programa que se ejecuta es el preprocesador, que es un procesador de macros (un tipo de editor de texto automático) que maneja todas las líneas que comienzan con #.
@@ -17,8 +17,27 @@ El primer programa que se ejecuta es el preprocesador, que es un procesador de m
 - `EXIT_SECESS` se define en `<stdlib.h>`: es una macro similar a un objeto que comúnmente se expande a 0 y normalmente se define como: `#define EXIT_SUCCESS 0`
 - La función `put` devuelve el valor de la macro `EOF` (un entero negativo) si se produce un **error** de escritura; de lo contrario, devuelve un valor entero no negativo.
 
-### Assembler
-- `gcc -Wall -Wextra -g -Wextra -Wa, -a=hello.lst -c hello.c`
+### Objects, Functions and Types
+- Cada **type** en C, es un ***object** type* o un ***function** type*.
+#### Variables
+- Declarar variables (*objects with identifiers*)
+- El **type** es importante porque la *colección de bits* que representa un tipo de objeto probablemente tendrá un valor diferente si se interpreta como un *different type of object*.
+    - Por ejemplo, el número `1` se representa en [IEEE 754](https://es.wikipedia.org/wiki/IEEE_754) (Floating-Point Arithmetic) mediante el patrón de bits `0x3f800000` (IEEE 754–2008)???. Pero si tuviera que interpretar este mismo patrón de bits como un número entero, obtendría el valor `1.065.353.216` en lugar de `1`.
+
+#### Objects
+- “Region of *data storage* in the execution *environment*, the contents of which **can represent values**” (ISO/IEC 9899:2018).
+-  “When referenced, *an object* can be interpreted **as having a particular type**.” **A variable** is an example of an object.
+- Tomar las *addresses* de los objetos y *dereference* esos **objects pointer**.
+
+#### Functions
+- No son objetos pero tienen *types*. Un **function type** se caracteriza tanto por su `return type` como por el `number` y los *types* de sus `parameters`.
+
+#### Pointers
+- Se pueden considerar como una **address**-*direccion*, una **ubicación en la memoria** donde se *almacena* un **object** o una **funcion**. 
+- The **pointer type** se deriva de una función o un tipo de objeto denominado tipo referenciado(**referenced type**). Un pointer type derivado del *type* referenciado `T`, se le llama puntero a `T`.
+> Debido a que los *objects* y *functions* son cosas diferentes, los **object pointers** y **function pointers** también son cosas diferentes y no deben usarse indistintamente. 
+
+
 
 ### Logic Operators
 
