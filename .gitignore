@@ -1,0 +1,3 @@
+*.exe
+exercises/*.exe
+.vscode
