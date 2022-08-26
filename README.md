@@ -1,4 +1,6 @@
 # C
+C is *call-by-value* (also called a ***pass-by-value***), lo que significa que cuando proporciona un `argument` a una `function`, el valor de ese argumento se copia en una *variable distinta* para usar dentro de la función.
+> Para reparar este error, puede usar **pointers (`*`)**. 
 
 ## Compiler
 - `gcc -Wall -Wextra -g -Wextra -Wa, -a=hello.lst -c hello.c`
